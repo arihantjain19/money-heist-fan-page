@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ROYAL MINT SECURITY</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+  <div class="overlay"></div>
+
+  <!-- LOGIN -->
+  <section id="loginSection" class="center-box">
+    <h2 class="royal">ROYAL MINT</h2>
+    <h1 class="login-title">LOGIN</h1>
+
+    <form class="glass-card" onsubmit="showSecurity(event)">
+      <input type="text" placeholder="Username" required>
+      <input type="email" placeholder="Email" required>
+      <input type="tel" placeholder="Phone Number" required>
+      <input type="text" placeholder="Registration Number" required>
+      <button class="primary-btn">ENTER THE VAULT</button>
+    </form>
+  </section>
+
+  <!-- SECURITY -->
+  <section id="securitySection" class="center-box hidden">
+
+    <p id="typingText" class="story">
+      A security breach threatens to expose the Royal Mint heist operation.
+    </p>
+
+    <div class="alert-banner blink">
+      ⚠ SECURITY BREACH DETECTED
+    </div>
+
+    <div class="glass-card status-card">
+      <h2>SECURITY STATUS</h2>
+      <p id="status" class="breached">BREACHED</p>
+      <button class="danger-btn" onclick="protectCrew()">PROTECT THE CREW</button>
+    </div>
+<div class="stats-panel glass-card">
+  <h2 class="section-title">OPERATION STATS</h2>
+
+  <div class="stat">
+    <span>⏱ Time in Operation</span>
+    <strong id="timeStat">0s</strong>
+  </div>
+
+  <div class="stat">
+    <span>🚨 Threat Level</span>
+    <strong id="threatStat">HIGH</strong>
+  </div>
+
+  <div class="stat">
+    <span>🔐 Security Actions</span>
+    <strong id="actionStat">0</strong>
+  </div>
+
+  <div class="stat">
+    <span>📈 Success Rate</span>
+    <strong id="successStat">45%</strong>
+  </div>
+</div>
+
+  </section>
+<audio id="sirenSound" loop>
+  <source src="siren.mp3" type="audio/mpeg">
+</audio>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,273 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Orbitron', Arial, sans-serif;
+  color: white;
+  background: url("money.jpg") center/cover no-repeat fixed;
+  min-height: 100vh;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  z-index: -1;
+}
+
+/* Center layout */
+.center-box {
+  text-align: center;
+  padding-top: 60px;
+}
+
+.hidden {
+  display: none;
+}
+
+.royal {
+  font-size: 22px;
+  letter-spacing: 8px;
+  color: crimson;
+  text-transform: uppercase;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.royal::after {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 2px;
+  background: crimson;
+  margin: 10px auto 0;
+  box-shadow: 0 0 10px crimson;
+}
+
+.login-title {
+  font-size: 64px;
+  font-weight: 800;
+  letter-spacing: 6px;
+  color: white;
+  text-shadow:
+    0 0 10px crimson,
+    0 0 20px crimson;
+  animation: glowPulse 2s infinite alternate;
+}
+
+@keyframes glowPulse {
+  from {
+    text-shadow: 0 0 10px crimson;
+  }
+  to {
+    text-shadow: 0 0 25px crimson;
+  }
+}
+
+
+/* Glass effect */
+.glass-card {
+  width: 340px;
+  margin: auto;
+  padding: 25px;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.2);
+  box-shadow: 0 0 30px rgba(0,0,0,0.6);
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 6px;
+}
+
+/* Buttons */
+.primary-btn {
+  background: crimson;
+  color: white;
+  padding: 12px;
+  width: 100%;
+  border: none;
+  font-weight: bold;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.primary-btn:hover {
+  background: darkred;
+}
+
+.danger-btn {
+  background: black;
+  border: 2px solid crimson;
+  color: crimson;
+  padding: 12px;
+  cursor: pointer;
+}
+
+.danger-btn:hover {
+  background: crimson;
+  color: white;
+}
+
+/* Alert */
+.alert-banner {
+  margin: 25px auto;
+  width: 70%;
+  padding: 15px;
+  background: darkred;
+  font-weight: bold;
+  border-radius: 6px;
+}
+
+/* Blinking animation */
+.blink {
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0.4; }
+}
+
+/* Status */
+.status-card {
+  margin-top: 20px;
+}
+
+.breached {
+  color: red;
+  font-size: 28px;
+}
+
+.secured {
+  color: lightgreen;
+  font-size: 28px;
+}
+
+.story {
+  font-style: italic;
+  margin-bottom: 15px;
+}
+
+.visuals-text {
+  margin-top: 40px;
+  color: gold;
+}
+/* ---------- RESPONSIVE DESIGN ---------- */
+
+@media (max-width: 768px) {
+  .login-title {
+    font-size: 42px;
+  }
+
+  .glass-card {
+    width: 90%;
+  }
+
+  .alert-banner {
+    width: 90%;
+    font-size: 14px;
+  }
+
+  .visuals-text {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-title {
+    font-size: 36px;
+  }
+
+  .royal {
+    letter-spacing: 3px;
+    font-size: 18px;
+  }
+
+  input {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  button {
+    font-size: 14px;
+  }
+}
+.section-title {
+  font-size: 24px;
+  letter-spacing: 4px;
+  color: #ff4d4d;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  border-bottom: 2px solid #ff4d4d;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+.alert-banner {
+  animation: sirenPulse 0.8s infinite;
+}
+
+@keyframes sirenPulse {
+  0% { background: darkred; }
+  50% { background: red; }
+  100% { background: darkred; }
+}
+.stats-panel {
+  margin-top: 30px;
+  width: 360px;
+}
+
+.stat {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  font-size: 14px;
+}
+
+.stat strong {
+  color: gold;
+}
+.progress-block {
+  margin: 15px 0;
+  text-align: left;
+}
+
+.progress-block label {
+  font-size: 13px;
+  color: #ccc;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 12px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 5px;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0;
+  border-radius: 10px;
+  transition: width 1.5s ease-in-out;
+}
+
+.progress-fill.red {
+  background: linear-gradient(90deg, darkred, red);
+}
+
+.progress-fill.green {
+  background: linear-gradient(90deg, green, lightgreen);
+}
+
+.progress-fill.gold {
+  background: linear-gradient(90deg, goldenrod, gold);
+}
